@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd 
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<!-- cometd -->
+	<bean id="bayeuxServer" class="org.cometd.server.BayeuxServerImpl"
+		init-method="start" destroy-method="stop">
+		<property name="options">
+			<map>
+				<entry key="javax.servlet.ServletContext" value-ref="servletContext" />
+				<entry key="ws.cometdURLMapping" value="/cometd/*" />
+				<entry key="logLevel" value="1" />
+				<entry key="timeout" value="15000" />
+			</map>
+		</property>
+		<property name="transports">
+			<list>
+				<bean id="websocketTransport" class="org.cometd.websocket.server.WebSocketTransport">
+					<constructor-arg ref="bayeuxServer" />
+				</bean>
+				<bean id="jsonTransport" class="org.cometd.server.transport.JSONTransport">
+					<constructor-arg ref="bayeuxServer" />
+				</bean>
+				<bean id="jsonpTransport" class="org.cometd.server.transport.JSONPTransport">
+					<constructor-arg ref="bayeuxServer" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.context.support.ServletContextAttributeExporter">
+		<property name="attributes">
+			<map>
+				<entry key="org.cometd.bayeux" value-ref="bayeuxServer" />
+			</map>
+		</property>
+	</bean>
+
+	<bean id="cometdTimesBiddingService" class="com.cvicse.ts.cometd.service.CometdTimesBiddingService">
+		<constructor-arg index="0" ref="bayeuxServer" />
+		<constructor-arg index="1" value="" />
+	</bean>
+
+	<bean id="timesBiddingTimedTaskService"
+		class="com.cvicse.ts.cometd.service.TimesBiddingTimedTaskService">
+		<constructor-arg index="0" ref="bayeuxServer" />
+		<constructor-arg index="1" value="" />
+	</bean>
+</beans>

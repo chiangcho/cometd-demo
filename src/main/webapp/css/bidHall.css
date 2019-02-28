@@ -1,0 +1,388 @@
+@CHARSET "UTF-8";
+body, button, input, select, textarea {
+	font: 14px/1.5 Microsoft Yahei, 'Helvetica Neue', Helvetica, Hiragino
+		Sans GB, WenQuanYi Micro Hei, sans-serif
+}
+.mycontainer {
+	margin: 0px auto;
+	width:1280px;
+	padding-top: 0px;
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+
+#header {
+	width: 1280px;
+	margin-bottom: 5px;
+}
+#header img{
+	width: 100%;
+	border-radius: 10px;
+}
+
+ #left {
+	border:1px solid #ccc;
+	width: 200px;
+	height: 383px;
+	float:left;
+	border-radius: 10px;
+	position: relative;
+}
+#left ul{
+	padding-left:32px;
+	padding-top: 26px;
+}
+#left ul li {
+	padding: 10px;
+	color:#a0a0a0;
+	font-size: 14px;
+}
+.mine-mark{
+	color: #FD6600;
+	white-space: nowrap;
+}
+.mark-span{
+	
+}
+#middle {
+	width: 760px;
+	height: 383px;
+	float:left;
+	border-radius: 10px;
+	border:1px solid #ccc;
+	margin: 0 10px;
+}
+.bid-person-sum{
+	position: absolute;
+	left:40px;
+	bottom: 30px;
+	color: #a0a0a0;
+}
+.bid-person-sum span{
+	font-size:22px;
+	color: #FE8333;
+}
+.bid-person-img{
+	position: absolute;
+	left:58px;
+	bottom: 70px;
+}
+#right {
+	border:1px solid #ccc;
+	width: 300px;
+	height: 383px;
+	float:left;
+	color: #a0a0a0;
+	border-radius: 10px;
+}
+
+#footer {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000;
+	width: 100%;
+	height: 200px;
+}
+.myDiv {
+	background-color: #ff6; 
+	border:5px solid #f90;
+	text-align:center;
+	line-height:40px;
+	font-size:12px;
+	z-index:99;
+	width:500px;
+	height:400px;
+	left:50%;
+	top:50%;
+	margin:0 auto;
+}
+.proj{
+	background: #FF6400;
+	font-size: 22px;
+    font-weight: bold;
+    color: #fff;
+}
+.proj span:nth-child(1){
+	float:left;
+	margin-left: 8%;
+}
+
+.cur-price-row{
+	width:100%;
+	height:180px;
+	line-height:180px;
+	padding:0px;
+}
+
+.cur-price-item{
+	float: left;
+    width: 229px;
+    padding: 0px;
+    margin: 0px;
+    height:180px;
+    margin-left:20px;
+}
+
+.cur-price-item.price{
+	font-size: 22px;
+	font-weight: bold;
+	color: #ff6400;
+	height:180px;
+	width:180px;
+	text-align:center;
+	position: relative;
+    padding-top: 6px;
+    border-radius:180px;
+    background-color: #eaeaea;
+    margin-top: 17px;
+}
+.cur-price{
+	text-align: center;
+	height:165px;
+	line-height: 165px;
+}
+.add-price-row{
+	font-size: 16px;
+	color: #a0a0a0;
+	padding:0px 10px;
+	position: relative;
+    bottom: 90px;
+}
+
+.pic{
+	padding-left:105px !important;
+}
+.my_button{
+	background-color: #ff6400;
+    border-color: #ff6400;
+    color: #fff;
+    min-width: 85px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 4px;
+}
+
+.my_button:HOVER,.my_button:FOCUS{
+	color: #fff;
+    background-color: #FF9A38;
+    border-color: #FF9A38;
+}
+
+.my_button.disabled,.my_button.disabled:HOVER,.my_button.disabled:FOCUS,
+.add-price-btn.disabled,.add-price-btn.disabled:HOVER,.add-price-btn.disabled:FOCUS
+{
+	background-color: #ccc;
+  	border-color: #ccc;
+  	-webkit-box-shadow: none;
+            box-shadow: none;
+	pointer-events: none;
+	cursor: not-allowed;
+	filter: alpha(opacity=100);
+	opacity: 1; 
+}
+
+.msg{
+	width: 980px;
+	height: 200px;
+	float:left;
+	margin-top: 15px;
+	margin-bottom:20px;
+}
+.footer:AFTER{
+	clear: both;
+}
+.my_offer{
+	width: 300px;
+	height: 300px;
+	float:left;
+	margin-top: 15px;
+	border: 1px solid #ccc;
+	padding: 15px 0px;
+	padding-right:0px;
+	border-radius:5px;
+}
+.my_offer div {
+	padding-left:15px;
+}
+.msg div{
+	margin-right: 10px;
+	border: 1px solid #ccc;
+}
+.msg div:nth-child(1){
+	height: 240px;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
+.msg div:nth-child(2){
+	height: 60px;
+	border: 1px solid #ccc;
+	padding: 15px 15px;
+	line-height:50px;
+}
+.msg input{
+	float:left;
+	width: 88%;
+	margin-right:20px;
+}
+.my_offer div:nth-child(1){
+	font-size: 22px;
+}
+
+.add-price-btn{
+	display: inline-block;
+	  margin-bottom: 0;
+	  text-align: center;
+	  white-space: nowrap;
+	  vertical-align: middle;
+	  -ms-touch-action: manipulation;
+	      touch-action: manipulation;
+	  cursor: pointer;
+	  -webkit-user-select: none;
+	     -moz-user-select: none;
+	      -ms-user-select: none;
+	          user-select: none;
+	border: 1px solid transparent;
+	padding: 2px 10px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 8px;
+    line-height: 1;
+    text-decoration: none;
+    color: #fff!important;
+    background-color: #b82121;
+    min-width: 40px;
+}
+.add-price-btn:HOVER {
+	text-decoration: none;
+}
+.table{
+	margin-bottom: 0px;
+}
+
+.project-info-table{
+	width:100%;
+}
+
+.project-info-table td{
+	border: 0px;
+	padding-left: 70px;
+	padding-top:10px;
+	text-align: left;
+	font-size: 15px;
+}
+
+.project-info-table .add1{
+	padding-left: 38px !important;
+	padding-top:20px;
+	font-weight: bold;
+}
+.project-info-table .add2{
+	padding-left: 38px !important;
+	padding-top:10px;
+	font-weight: bold;
+}
+.add-price-panel-header{
+	text-align: center;
+	background: #b82121;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    height:33px;
+    line-height: 33px;
+    padding:0px 20px;
+    border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+.add-price-panel-header .text-right{
+	float:right;
+}
+
+.add-price-panel-header .text-left{
+	float:left;
+}
+
+#right .table th,.my_offer .table th{
+	font-size: 14px;
+	font-weight: normal;
+}
+#chatBoard{
+	padding:20px;
+	height: 240px;
+	width:970px;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
+
+.chat-thread {
+  margin: 0px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+ }
+#recods-wrapper,#persons,#myRecods-wrapper{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#myRecods-wrapper{
+	height:251px;
+}
+#persons,#recods-wrapper{
+	height:330px;
+}
+
+#body:AFTER{
+	display: block;
+	clear: both;
+	content: " "
+}
+
+#recods-wrapper,#myRecods-wrapper{
+	padding:0px 5px;
+}
+
+#recods-wrapper .table td,#myRecods-wrapper .table td{
+	border-top:0px;
+	padding:4px;
+}
+.cur-price-label{
+	position: absolute;
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+    top: 35px;
+    left: 36px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.cur-price-label-en{
+	position: absolute;
+    height: 30px;
+    line-height: 30px;
+    left: 20px;
+    top: 120px;
+    width: 140px;
+    color: rgb(179, 179, 179);
+    font-size: 12px;
+}
+
+.projectinfo-table td{
+	border: 0px;
+	padding-left: 30px;
+	padding-top:16px;
+	text-align: left;
+	font-size: 15px;
+	width:50%
+}
+#lastBiddingPrice{
+	background-color: #b82121;
+	color: #fff;
+    min-width: 160px;
+    display: inline-block;
+    line-height: 30px;
+    margin-top: 70px;
+}
+.send-msg{
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
