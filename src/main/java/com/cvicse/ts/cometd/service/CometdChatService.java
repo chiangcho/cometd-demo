@@ -10,21 +10,20 @@ import org.cometd.server.AbstractService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class CometdTimesBiddingService extends AbstractService {
+public class CometdChatService extends AbstractService {
 
-	public CometdTimesBiddingService(BayeuxServer bayeux, String name) {
+	public CometdChatService(BayeuxServer bayeux, String name) {
 		super(bayeux, name);
 		// адлЛ
 		addService("/service/chat", "chat");
 
-		addService("/service/test", "test");
+		addService("/service/cometd-test", "test");
 
 	}
 
-	private static final Logger logger = LoggerFactory.getLogger(CometdTimesBiddingService.class);
-
-	// адлЛ
-	public void chat(ServerSession remote, ServerMessage message) {
+	private static final Logger logger = LoggerFactory.getLogger(CometdChatService.class);
+	
+	public void test(ServerSession remote, ServerMessage message) {
 		logger.debug(message.toString());
 		try {
 			Map<String, Object> map = message.getDataAsMap();
@@ -38,8 +37,8 @@ public class CometdTimesBiddingService extends AbstractService {
 			e.printStackTrace();
 		}
 	}
-
-	public void test(ServerSession remote,ServerMessage message){
+	// адлЛ
+	public void chat(ServerSession remote,ServerMessage message){
 		logger.debug(message.toString());
 		try {
 			Map<String,Object> map = message.getDataAsMap();

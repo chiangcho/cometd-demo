@@ -90,20 +90,19 @@ jQuery(function($) {
 		message.msg = $("#msg").val();
 		message.room = $("#room").val();
 		$("#msg").val("");
-		cometd.publish('/service/test', message);//
+		cometd.publish('/service/chat', message);//
 	})
 });
 </script>
-<script src="<%=request.getContextPath()%>/js/bootstrap.min.js"></script>
-<link href="<%=request.getContextPath()%>/css/bootstrap.css" rel="stylesheet">
-<link href="<%=request.getContextPath()%>/css/bidHall.css" rel="stylesheet">
+<script src="<%=request.getContextPath()%>/lib/js/bootstrap.min.js"></script>
+<link href="<%=request.getContextPath()%>/lib/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 	<h3 style="padding-left:200px">聊天室</h3>
 	<br>
  	<div class="form-group col-sm-8">
  		<div class="col-sm-6">
- 			<input id="ip" type="text" class="form-control" placeholder="请输入IP地址" required="required">
+ 			<input id="ip" type="text" class="form-control" placeholder="请输入服务地址" required="required">
  		</div>
  		<div class="col-sm-2">
  			<input id="room" type="text" class="form-control" placeholder="聊天室编号" required="required">
@@ -111,12 +110,15 @@ jQuery(function($) {
 		<button id="connect" class="btn btn-danger">&nbsp;&nbsp;连&nbsp;接&nbsp;&nbsp;</button>&nbsp;&nbsp;&nbsp;&nbsp;
 	</div>
 	<div class="form-group col-sm-8">
-	<div class="col-sm-6">
-	(提示:若更换ip测试，请刷新后重新输入！)
+	<div class="col-sm-12">
+	(提示:若更换服务地址，请刷新后重新输入！服务地址包括schema和port，例如[http://localhost:8080])
+	</div>
+	<div class="col-sm-12">
+	http://localhost:8080
 	</div>
 	</div>
 	<div class="msg" style="padding-left:30px">
-		<ul id="chatBoard"  class="chat-thread" style="width:970px;height:300px;overflow:auto">
+		<ul id="chatBoard"  class="chat-thread" style="width:100%;height:300px;overflow:auto;padding-left: 30px;">
 		</ul>
 		<div class="send-msg" style="width:100%">
 			<input id="msg" type="text" class="form-control" placeholder="请输入内容" required="required">
@@ -125,4 +127,52 @@ jQuery(function($) {
 	</div>
 
 </body>
+<style>
+#chatBoard{
+	padding:20px;
+	height: 240px;
+	width:970px;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
+
+.chat-thread {
+  margin: 0px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+ }
+ 
+.send-msg{
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+.msg{
+	width: 980px;
+	height: 200px;
+	float:left;
+	margin-top: 15px;
+	margin-bottom:20px;
+}
+
+.msg div{
+	margin-right: 10px;
+	border: 1px solid #ccc;
+}
+.msg div:nth-child(1){
+	height: 240px;
+	border: 1px solid #ccc;
+	border-bottom: none;
+}
+.msg div:nth-child(2){
+	height: 60px;
+	border: 1px solid #ccc;
+	padding: 15px 15px;
+	line-height:50px;
+}
+.msg input{
+	float:left;
+	width: 88%;
+	margin-right:20px;
+}
+</style>
 </html>

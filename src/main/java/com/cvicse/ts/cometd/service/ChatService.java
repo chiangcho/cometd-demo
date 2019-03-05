@@ -9,17 +9,17 @@ import org.cometd.server.AbstractService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class TimesBiddingTimedTaskService extends AbstractService {
+public class ChatService extends AbstractService {
 
-	private static final Logger logger = LoggerFactory.getLogger(CometdTimesBiddingService.class);
+	private static final Logger logger = LoggerFactory.getLogger(CometdChatService.class);
 
-	public TimesBiddingTimedTaskService(BayeuxServer bayeux, String name) {
+	public ChatService(BayeuxServer bayeux, String name) {
 		super(bayeux, name);
 	}
 
 	/**************************** адлЛ ***************************************/
 
-	public void chetPublic(String room, String msg, String formatDate) {
+	public void chat(String room, String msg, String formatDate) {
 		logger.debug(room + "=====" + msg);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("msg", msg);

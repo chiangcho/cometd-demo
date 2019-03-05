@@ -43,13 +43,13 @@
 		</property>
 	</bean>
 
-	<bean id="cometdTimesBiddingService" class="com.cvicse.ts.cometd.service.CometdTimesBiddingService">
+	<bean id="cometdChatService" class="com.cvicse.ts.cometd.service.CometdChatService">
 		<constructor-arg index="0" ref="bayeuxServer" />
 		<constructor-arg index="1" value="" />
 	</bean>
 
-	<bean id="timesBiddingTimedTaskService"
-		class="com.cvicse.ts.cometd.service.TimesBiddingTimedTaskService">
+	<bean id="chatService"
+		class="com.cvicse.ts.cometd.service.ChatService">
 		<constructor-arg index="0" ref="bayeuxServer" />
 		<constructor-arg index="1" value="" />
 	</bean>

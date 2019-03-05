@@ -12,12 +12,12 @@
 		additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
-	<!--  
+	<!--  -->
 	<logger name="org.cometd.server.BayeuxServerImpl" level="debug"
 		additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
-	 -->
+	 
 	<logger name="com.cvicse" level="debug"
 		additivity="false">
 		<appender-ref ref="STDOUT" />

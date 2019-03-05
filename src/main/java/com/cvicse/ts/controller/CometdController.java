@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cvicse.ts.cometd.service.TimesBiddingTimedTaskService;
+import com.cvicse.ts.cometd.service.ChatService;
 
 @Controller
 @RequestMapping("/chat")
 public class CometdController {
 	@Autowired
-	private TimesBiddingTimedTaskService timesBiddingTimedTaskService;
+	private ChatService chatService;
 	@ResponseBody
 	@RequestMapping(value = "/add")
 	public String addChat(@RequestParam("message") String message,@RequestParam("room")String room) {
-		timesBiddingTimedTaskService.chetPublic(room, message, (new Date()).toLocaleString());
+		chatService.chat(room, message, (new Date()).toLocaleString());
 		return "ok";
 
 	}
