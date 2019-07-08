@@ -53,4 +53,10 @@
 		<constructor-arg index="0" ref="bayeuxServer" />
 		<constructor-arg index="1" value="" />
 	</bean>
+	<bean class="com.cvicse.ts.cometd.extension.ExtensionRegister" >
+		<property name="bayeuxServer" ref="bayeuxServer"></property>
+		<property name="logExtension" ref="logExtension"></property>
+	</bean>
+	<bean id="logExtension" class="com.cvicse.ts.cometd.extension.LogExtension"></bean>
+		
 </beans>
