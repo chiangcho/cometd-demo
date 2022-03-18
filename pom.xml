@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<mybatis.version>3.4.6</mybatis.version>
-		<cometd.version>3.1.8</cometd.version>
+		<cometd.version>5.0.11</cometd.version>
 	</properties>
 	<dependencies>
 		<dependency>
